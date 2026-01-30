@@ -1,8 +1,8 @@
 // Elementos DOM
     
-    const clickSound = document.getElementById('clickSound');
-    const beepSound = document.getElementById('beepSound');
-    const finalSound = document.getElementById('finalSound');
+    const clickSound = document.getElementById("clickSound");
+    const beepSound = document.getElementById("beepSound");
+    const finalSound = document.getElementById("finalSound");
     const timerEl = document.getElementById("timer");
     const statusEl = document.getElementById("status");
     const startBtn = document.getElementById("startBtn");
@@ -17,10 +17,10 @@
     
     // Event listeners para os botões
     startBtn.addEventListener('click', () => {
-    clickSound.play().catch(() => {}).finally(() => {
+    clickSound.play().catch(() => { /* Ignorar erros silenciosamente */ }).finally(() => {
     iniciarTimer();
-        });
-    });
+  });
+});
 
     pauseBtn.addEventListener('click', pausarTimer);
     resetBtn.addEventListener('click', resetarTimer);
@@ -327,6 +327,7 @@ function atualizarBola() {
   bolaTimer.textContent = formatarTempo(tempoRestante);
 
 }
+
 
 
 
