@@ -1,8 +1,9 @@
 // Elementos DOM
     
+    const clickSound = document.getElementById('clickSound');
     const timerEl = document.getElementById("timer");
     const statusEl = document.getElementById("status");
-    const startBtn = document.getElementById("startBtn");''
+    const startBtn = document.getElementById("startBtn");
     const pauseBtn = document.getElementById("pauseBtn");
     const resetBtn = document.getElementById("resetBtn");
     const alertSound = document.getElementById("alertSound");
@@ -11,6 +12,16 @@
     const inputPausaLonga = document.getElementById("inputPausaLonga");
     const circle = document.querySelector(".circle-progress");
     const bolaTimer = document.getElementById("bola-timer");
+
+    // Event listeners para os botões
+    startBtn.addEventListener('click', () => {
+    clickSound.play().catch(() => {}).finally(() => {
+    iniciarTimer();
+    });
+    });
+
+    pauseBtn.addEventListener('click', pausarTimer);
+    resetBtn.addEventListener('click', resetarTimer);
 
     // Variáveis do timer
     let DURACOES = {
@@ -315,4 +326,5 @@ function atualizarBola() {
   bolaTimer.textContent = formatarTempo(tempoRestante);
 
 }
+
 
