@@ -89,30 +89,6 @@
     }
 
     // Iniciar timer
-function startTimer() {
-    unlockAudio(); // desbloqueia áudio no primeiro clique
-    clearInterval(timerInterval);
-    timerInterval = setInterval(() => {
-        seconds++;
-        let min = String(Math.floor(seconds / 60)).padStart(2, '0');
-        let sec = String(seconds % 60).padStart(2, '0');
-        bolaTimer.textContent = `${min}:${sec}`;
-
-        // Exemplo: tocar beep a cada 10 segundos
-        if (seconds % 10 === 0) {
-            beepSound.currentTime = 0;
-            beepSound.play().catch(() => {});
-        }
-
-        // Exemplo: tocar finalSound aos 30 segundos
-        if (seconds === 30) {
-            finalSound.currentTime = 0;
-            finalSound.play().catch(() => {});
-        }
-
-    }, 1000);
-}
-
     function iniciarTimer() {
       if (timerInterval) return;
 
@@ -339,3 +315,4 @@ function atualizarBola() {
   bolaTimer.textContent = formatarTempo(tempoRestante);
 
 }
+
