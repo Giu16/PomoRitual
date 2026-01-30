@@ -110,7 +110,7 @@
 
       timerInterval = setInterval(() => {
     if (tempoRestante > 0) {
-    if (tempoRestante <= 6) {
+    if (tempoRestante <= 5) {
       beepSound.play().catch(() => {/* som bloqueado */});
     }
     tempoRestante--;
@@ -327,6 +327,7 @@ function atualizarBola() {
   bolaTimer.textContent = formatarTempo(tempoRestante);
 
 }
+
 
 
 
