@@ -1,0 +1,284 @@
+:root {
+    --cor-primaria: #1abc9c;
+    --cor-fundo-escuro: #0a192f;
+    --cor-texto-escuro: #ecf0f1;
+    --cor-botao-escuro: #16a085;
+  }
+
+  body {
+    margin: 0; 
+    padding: 25px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background 0.4s, color 0.4s;
+    user-select: none;
+  }
+  
+
+  h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px var(--cor-botao-escuro);
+    letter-spacing: 3px;
+    transition: color 0.4s, text-shadow 0.4s;
+  }
+
+  .timer-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin-bottom: 25px;
+  }
+
+  svg {
+    transform: rotate(-90deg);
+    width: 280px;
+    height: 280px;
+    transition: stroke 0.4s;
+  }
+
+  circle {
+    fill: none;
+    stroke-width: 15;
+    stroke-linecap: round;
+  }
+
+  .circle-bg {
+    stroke: rgba(255, 255, 255, 0.1);
+  }
+
+ .circle-progress {
+  stroke: var(--cor-primaria);
+  transition: stroke-dashoffset 1s linear;
+  position: relative;
+  z-index: 2;
+}
+
+  .timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-shadow:
+    0 0 1px var(--cor-primaria),
+    0 0 0px var(--cor-botao-escuro),
+    0 0 5px var(--cor-botao-escuro);
+  transition: color 0.4s, text-shadow 0.4s;
+  user-select: none;
+  letter-spacing: normal; /* Ajuste aqui */
+}
+
+  .status {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-shadow: 0 0 8px var(--cor-botao-escuro);
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+    transition: color 0.4s, text-shadow 0.4s;
+    user-select: none;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  button {
+    background: transparent;
+    border: 2.5px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 45px;
+    cursor: pointer;
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease,
+      box-shadow 0.4s ease,
+      transform 0.2s ease;
+    box-shadow: 0 0 10px transparent;
+    user-select: none;
+  }
+
+  button:hover:not(:disabled),
+  button:focus:not(:disabled) {
+    background-color: #FFFFFF;
+    color: #0a192f;
+    box-shadow:
+      0 0 15px var(--cor-primaria),
+      0 0 25px var(--cor-botao-escuro);
+    outline: none;
+    transform: scale(1.05);
+  }
+
+  button:disabled {
+    border-color: #555;
+    color: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  /* Formulário customização */
+  .config-container {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 40px;
+    background: rgba(255 255 255 / 0.05);
+    border-radius: 15px;
+    padding: 20px 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    user-select: none;
+    transition: background 0.4s;
+    text-align: center; /* centraliza todo conteúdo */
+  }
+
+  .config-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #FFFFFF;
+    transition: color 0.4s;
+    text-align: center; /* centraliza texto do label */
+  }
+
+  .config-container input[type="number"] {           
+    margin: 0 auto 15px;    /* centraliza e espaça abaixo */
+    display: block;         /* para margin auto funcionar */
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255 255 255 / 0.1);
+    color: #fff;
+    transition: background 0.4s, color 0.4s;
+  }
+
+  .config-container input[type="number"]::-webkit-inner-spin-button,
+  .config-container input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Cabeçalho fixo no topo */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background: rgba(10, 25, 47, 0.5); /* fundo transparente escuro */
+  backdrop-filter: blur(8px); /* efeito vidro fosco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+/* Texto neon no header */
+.top-header h1 {
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px #ffffff,
+    0 0 0px #ffffff,
+    0 0 0px #ffffff,
+    0 0 0px #ffffff;
+  margin: 0;
+}
+
+body {
+  padding-top: 100px; /* Ajuste para diminuir o espaçamento */
+
+}
+  #bola-timer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--cor-primaria); /* cor principal do tema */
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: grab;
+  box-shadow:
+    0 0 10px var(--cor-primaria),
+    0 0 20px var(--cor-botao-escuro);
+  z-index: 9999;
+  touch-action: none; /* importante para funcionar no mobile */
+}
+
+#bola-timer:active {
+  cursor: grabbing;
+}
+
+.wave-circle {
+  fill: none;
+  stroke: var(--cor-primaria);
+  stroke-width: 15;
+  stroke-linecap: round;
+  opacity: 0.15;
+  transform-origin: center;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.wave1 {
+  animation-name: wavePulse;
+  animation-duration: 3.0s;
+}
+
+.wave2 {
+  animation-name: wavePulse;
+  animation-duration: 3.5s;
+  
+}
+
+.wave3 {
+  animation-name: wavePulse;
+  animation-duration: 4.0s;
+  
+}
+
+@keyframes wavePulse {
+  0% {
+    stroke-opacity: 0.20;
+    transform: scale(1);
+  }
+  50% {
+    stroke-opacity: 0.20;
+    transform: scale(1.04);
+  }
+  100% {
+    stroke-opacity: 0.20;
+    transform: scale(1);
+  }
+}

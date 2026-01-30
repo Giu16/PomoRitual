@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pomodoro Técnica</title>
+<link rel="stylesheet" href="styles.css"/>
+<script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="top-header" role="banner">
+    <h1>PomoRitual</h1>
+  </header>
+    <div class="timer-wrapper" aria-live="polite" aria-atomic="true">
+    <svg width="290" height="290" viewBox="0 0 300 290" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-bg" cx="140" cy="140" r="1300"></circle>
+  <circle class="circle-progress" cx="140" cy="140" r="130" stroke-dasharray="817" stroke-dashoffset="0"></circle>
+  <!-- Círculos para onda -->
+  <circle class="wave-circle wave1" cx="140" cy="140" r="130"></circle>
+  <circle class="wave-circle wave2" cx="140" cy="140" r="130"></circle>
+  <circle class="wave-circle wave3" cx="140" cy="140" r="130"></circle>
+</svg>
+    <div class="timer" id="timer" role="timer" aria-label="Tempo restante">25:00</div>
+  </div>
+
+  <div class="status" id="status" aria-live="polite" aria-atomic="true">FOCO</div>
+
+  <div class="buttons">
+    <button id="startBtn">Iniciar</button>
+    <button id="pauseBtn">Pausar</button>
+    <button id="resetBtn">Resetar</button>
+  </div>
+
+ <div class="config-container" aria-label="Configurações do temporizador">
+    <label for="inputFoco">Duração do Pomodoro (minutos)</label>
+    <input type="number" id="inputFoco" min="1" max="60" value="25" />
+
+    <label for="inputPausaCurta">Duração da Pausa Curta (minutos)</label>
+    <input type="number" id="inputPausaCurta" min="1" max="30" value="5" />
+
+    <label for="inputPausaLonga">Duração da Pausa Longa (minutos)</label>
+    <input type="number" id="inputPausaLonga" min="1" max="60" value="15" />
+  </div>
+
+  <audio id="alertSound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+  <audio id="beepSound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+  <audio id="finalSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+  <div id="bola-timer" style="display:none;">00:00</div>
+</body>
+</html>
