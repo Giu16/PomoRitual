@@ -34,13 +34,13 @@
 
  <div class="config-container" aria-label="Configurações do temporizador">
     <label for="inputFoco">Duração do Pomodoro (minutos)</label>
-    <input type="number" id="inputFoco" value="25" min="1" max="60" inputmode="numeric" pattern="[0-9]*"/>
+    <input type="tel" id="inputFoco" value="25" min="1" max="60" inputmode="tel" pattern="[0-9]*" maxlength="2" />
 
     <label for="inputPausaCurta">Duração da Pausa Curta (minutos)</label>
-    <input type="number" id="inputPausaCurta" value="5" min="1" max="30" inputmode="numeric" pattern="[0-9]*"/>
+  <input type="tel" id="inputPausaCurta" value="5" inputmode="tel" pattern="[0-9]*" maxlength="2" />
 
     <label for="inputPausaLonga">Duração da Pausa Longa (minutos)</label>
-   <input type="number" id="inputPausaLonga" value="15" min="1" max="60" inputmode="numeric" pattern="[0-9]*"/>
+  <input type="tel" id="inputPausaLonga" value="15" inputmode="tel" pattern="[0-9]*" maxlength="2" />
   </div>
 
   <audio id="clickSound" src="https://actions.google.com/sounds/v1/ui/click.ogg" preload="auto"></audio>
@@ -51,5 +51,6 @@
 </body>
 
 </html>
+
 
 
