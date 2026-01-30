@@ -12,12 +12,12 @@
     const inputPausaLonga = document.getElementById("inputPausaLonga");
     const circle = document.querySelector(".circle-progress");
     const bolaTimer = document.getElementById("bola-timer");
-
+    
     // Event listeners para os botões
     startBtn.addEventListener('click', () => {
     clickSound.play().catch(() => {}).finally(() => {
     iniciarTimer();
-    });
+        });
     });
 
     pauseBtn.addEventListener('click', pausarTimer);
@@ -102,8 +102,7 @@
     // Iniciar timer
     function iniciarTimer() {
       if (timerInterval) return;
-
-    
+        
       inputPausaCurta.disabled = true;
       inputPausaLonga.disabled = true;
 
@@ -326,5 +325,6 @@ function atualizarBola() {
   bolaTimer.textContent = formatarTempo(tempoRestante);
 
 }
+
 
 
