@@ -136,18 +136,13 @@
   }
 
   /* Formulário customização */
-  .config-container {
-    max-width: 300px;
-    width: 100%;
-    margin-bottom: 40px;
-    background: rgba(255 255 255 / 0.05);
-    border-radius: 15px;
-    padding: 20px 25px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-    user-select: none;
-    transition: background 0.4s;
-    text-align: center; /* centraliza todo conteúdo */
-  }
+  .confi-container {
+  display: flex;
+  flex-direction: column; /* ou 'row' se quiser os inputs lado a lado */
+  align-items: center;
+  gap: 10px; /* espaçamento entre os inputs */
+  padding: 0 10px; /* opcional: um pouco de espaçamento lateral */
+}   
 
   .config-container label {
     display: block;
@@ -158,21 +153,17 @@
     text-align: center; /* centraliza texto do label */
   }
 
-  .config-container input[type="number"] {           
-    margin: 0 auto 15px;    /* centraliza e espaça abaixo */
-    display: block;         /* para margin auto funcionar */
-    padding: 10px 12px;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    background: rgba(255 255 255 / 0.1);
-    color: #fff;
-    transition: background 0.4s, color 0.4s;
-  }
+  .confi-container input[type="tel"] {
+  width: 100px; /* largura fixa para uniformidade */
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center; /* centraliza o texto */
+}
 
-  .config-container input[type="number"]::-webkit-inner-spin-button,
-  .config-container input[type="number"]::-webkit-outer-spin-button {
+  .config-container input[type="tel"]::-webkit-inner-spin-button,
+  .config-container input[type="tel"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
@@ -282,4 +273,5 @@ body {
     transform: scale(1);
   }
 }
+
 
