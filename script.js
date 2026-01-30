@@ -1,6 +1,8 @@
 // Elementos DOM
     
     const clickSound = document.getElementById('clickSound');
+    const beepSound = document.getElementById('beepSound');
+    const finalSound = document.getElementById('finalSound');
     const timerEl = document.getElementById("timer");
     const statusEl = document.getElementById("status");
     const startBtn = document.getElementById("startBtn");
@@ -107,8 +109,8 @@
       inputPausaLonga.disabled = true;
 
       timerInterval = setInterval(() => {
-  if (tempoRestante > 0) {
-    if (tempoRestante <= 5) {
+    if (tempoRestante > 0) {
+    if (tempoRestante <= 6) {
       beepSound.play().catch(() => {/* som bloqueado */});
     }
     tempoRestante--;
@@ -325,6 +327,7 @@ function atualizarBola() {
   bolaTimer.textContent = formatarTempo(tempoRestante);
 
 }
+
 
 
 
