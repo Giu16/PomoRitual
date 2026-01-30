@@ -16,7 +16,7 @@
     const bolaTimer = document.getElementById("bola-timer");
     
     // Event listeners para os botões
-    startBtn.addEventListener('click', () => {
+    startBtn.addEventListener("click", () => {
     clickSound.play().catch(() => { /* Ignorar erros silenciosamente */ }).finally(() => {
     iniciarTimer();
   });
@@ -327,6 +327,7 @@ function atualizarBola() {
   bolaTimer.textContent = formatarTempo(tempoRestante);
 
 }
+
 
 
 
