@@ -284,5 +284,15 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .titulo {
+    margin-bottom: 10px; /* menor margem para telas pequenas */
+  }
+  .timer-wrapper {
+    margin-top: 0;
+  }
+}
+
+
 
 
